@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - > Cosmin qrt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        /* Am adăugat stiluri pentru footer */
+        footer {
+            background-color: #000; /* Setează culoarea neagră */
+            padding: 20px 0; /* Spațiu interior */
+            text-align: center;
+            min-height: 100vh /* Centrare text și butoane */
+            position: fixed; /* Asigură că bara rămâne jos */
+            bottom: 0; /* Bara fixată în partea de jos */
+            width: 100%; /* Bara acoperă întreaga lățime */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Adaugă o umbră pentru efect vizual */
+            overflow: auto
+            z-index: 1000;
+            transition: transform 0.3s ease; /* Asigură suprapunerea peste alte elemente */
+        }
+
+        footer.scrolling {
+            transform: translateY(-10px); /* Mișcă bara ușor în sus */
+        }
+
+        /* Stiluri generale pentru corpul paginii */
+        body {
+            font-family: 'Poppins', sans-serif; /* Font principal */
+            margin: 0; /* Elimină marginile implicite */
+            padding: 0; /* Elimină padding-ul implicit */
+            background: url('http://cosminuslan.online/background/abc.jpg') no-repeat center center fixed; /* Fundal cu imagine fixată */
+            background-size: 500px, auto, contain; /* Dimensiunea imaginii de fundal */
+            background-position: calc(80% - 50px) center; /* Poziționare ajustată a imaginii */
+            color: #fff; /* Setează textul alb */
+        }
+
+        /* Strat semi-transparent pentru lizibilitate */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Acoperă întreaga lățime */
+            height: 100%; /* Acoperă întreaga înălțime */
+            background: rgba(0, 0, 0, 0.5); /* Strat semi-transparent pentru contrast */
+            z-index: -1; /* Strat inferior */
+        }
+
+        /* Stiluri pentru header */
+        header {
+            text-align: center; /* Centrare text */
+            padding: 50px; /* Spațiu interior */
+            background: rgba(0, 0, 0, 0.6); /* Fundal semi-transparent */
+        }
+
+        header h1 {
+            font-size: 3rem; /* Dimensiune titlu mare */
+        }
+
+        /* Stiluri pentru secțiuni */
+        section {
+            padding: 50px; /* Spațiu interior */
+            margin: 20px auto; /* Centrare și spațiu între secțiuni */
+            width: 80%; /* Lățime de 80% din pagină */
+            background: rgba(255, 255, 255, 0.1); /* Fundal semi-transparent */
+            border-radius: 15px; /* Colțuri rotunjite */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adaugă o umbră pentru efect */
+        }
+
+        section h2 {
+            font-size: 2rem; /* Dimensiune pentru subtitluri */
+            color: #ffdd59; /* Culoare galbenă pentru text */
+        }
+
+        /* Stiluri pentru butoane */
+        .contact-btn {
+            display: inline-block; /* Stil bloc pentru a permite padding */
+            padding: 15px 30px; /* Spațiu interior */
+            color: #74b9ff; /* Text albastru */
+            background: #fff; /* Fundal alb */
+            text-decoration: none; /* Elimină sublinierea */
+            border-radius: 50px; /* Colțuri rotunjite */
+            font-weight: bold; /* Text îngroșat */
+            transition: all 0.3s ease; /* Tranziție pentru hover */
+        }
+
+        .contact-btn:hover {
+            background: #ff4757; /* Schimbare culoare fundal la hover */
+            color: #fff; /* Text alb la hover */
+        }
+
+        button {
+            display: inline-block; /* Stil bloc pentru a permite padding */
+            padding: 15px 30px; /* Spațiu interior */
+            color: #74b9ff; /* Text albastru */
+            background: #fff; /* Fundal alb */
+            border: none; /* Elimină bordura */
+            border-radius: 50px; /* Colțuri rotunjite */
+            font-weight: bold; /* Text îngroșat */
+            cursor: pointer; /* Cursor pointer la hover */
+            transition: all 0.3s ease; /* Tranziție pentru hover */
+        }
+
+        button:hover {
+            background: #ff4757; /* Schimbare culoare fundal la hover */
+            color: #fff; /* Text alb la hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Strat semi-transparent -->
+    <header>
+        <h1>Japonese Art Style CV</h1>
+        <p>Web Developer | Designer | Artist | Java | Cloud</p>
+    </header>
+
+    <section>
+        <h2>Despre Mine</h2>
+        <p>Pasionat de dezvoltarea web și ilustrația stil anime.</p>
+    </section>
+
+    <section>
+        <h2>Competențe</h2>
+        <ul>
+            <li>HTML, CSS, JS</li>
+            <li>Ilustrație Anime</li>
+            <li>Design UI/UX</li>
+        </ul>
+    </section>
+
+    <footer>
+        <a href="mailto:admin@cosminuslan.online" class="contact-btn">Contactează-mă</a> <!-- Buton email -->
+        <button onclick="location.href='http://18.201.179.121:3000/'">Uploads-service</button> <!-- Buton pentru navigare -->
+    </footer>
+
+
+
+
+
+    <script>
+        // Selectăm bara de jos
+        const footer = document.getElementById('footer');
+        let lastScrollY = 0;
+
+        // Funcție pentru a adăuga clasa de animație în funcție de scroll
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > lastScrollY) {
+                // Dacă se scrollează în jos
+                footer.classList.add('scrolling');
+            } else {
+                // Dacă se scrollează în sus
+                footer.classList.remove('scrolling');
+            }
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+</html>
